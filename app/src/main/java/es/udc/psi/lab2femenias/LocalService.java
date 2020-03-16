@@ -14,7 +14,7 @@ public class LocalService extends AsyncTask<Integer, Integer,Void> {
             if (isCancelled())
                     return null;
             publishProgress(i);
-            //Log.d("localserv", "countDown: " + i);
+             //Log.d("localserv", "countDown: " + i);
             SystemClock.sleep(wait);
         }
         return null;
