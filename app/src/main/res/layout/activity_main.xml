@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/et_time"
+        android:layout_width="85dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:text="@string/et_time_str"
+        app:layout_constraintEnd_toStartOf="@+id/et_count"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/but_local_serv"
+        app:layout_constraintTop_toTopOf="@+id/but_local_serv" />
+
+    <ToggleButton
+        android:id="@+id/but_local_serv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:checked="false"
+        android:text="@string/but_local_serv_str"
+        android:textOff="@string/but_local_serv_str"
+        android:textOn="@string/but_local_serv_str"
+        android:enabled="true"
+        app:layout_constraintEnd_toStartOf="@+id/et_time"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_count"
+        android:layout_width="55dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:inputType="number"
+        android:text="@string/et_count_str"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/et_time"
+        app:layout_constraintTop_toTopOf="@+id/but_local_serv" />
+
+    <ToggleButton
+        android:id="@+id/but_bind_serv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/but_bind_serv_str"
+        android:textOff="@string/but_bind_serv_str"
+        android:textOn="@string/but_bind_serv_str"
+        android:enabled="false"
+        app:layout_constraintEnd_toStartOf="@+id/but_send"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/but_local_serv" />
+
+    <Button
+        android:id="@+id/but_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/but_send_str"
+        android:enabled="false"
+        app:layout_constraintEnd_toStartOf="@+id/but_get"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/but_bind_serv"
+        app:layout_constraintTop_toTopOf="@+id/but_bind_serv" />
+
+    <Button
+        android:id="@+id/but_get"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/but_get_str"
+        android:enabled="false"
+        app:layout_constraintEnd_toStartOf="@+id/tv_count"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/but_send"
+        app:layout_constraintTop_toTopOf="@+id/but_bind_serv" />
+
+    <TextView
+        android:id="@+id/tv_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/tv_count_unknown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/but_get"
+        app:layout_constraintTop_toTopOf="@+id/but_bind_serv" />
+
+    <ToggleButton
+        android:id="@+id/but_screen_serv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/but_screen_serv_str"
+        android:textOff="@string/but_screen_serv_str"
+        android:textOn="@string/but_screen_serv_str"
+        android:enabled="false"
+        app:layout_constraintEnd_toStartOf="@+id/but_send"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/but_bind_serv" />
+
+    <Button
+        android:id="@+id/but_clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/but_clear_str"
+        android:enabled="false"
+        app:layout_constraintEnd_toStartOf="@+id/but_get"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/but_screen_serv"
+        app:layout_constraintTop_toTopOf="@+id/but_screen_serv" />
+
+    <Button
+        android:id="@+id/but_ask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/but_ask_str"
+        android:enabled="false"
+        app:layout_constraintEnd_toStartOf="@+id/tv_data"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/but_clear"
+        app:layout_constraintTop_toTopOf="@+id/but_screen_serv" />
+
+    <TextView
+        android:id="@+id/tv_data"
+        android:layout_width="55dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/tv_data_str"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/but_ask"
+        app:layout_constraintTop_toTopOf="@+id/but_screen_serv" />
+
+
+    <Button
+        android:id="@+id/but_AsyncTask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/but_async_task_str"
+        android:enabled="false"
+        app:layout_constraintEnd_toStartOf="@+id/but_thread"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/but_screen_serv" />
+
+    <Button
+        android:id="@+id/but_thread"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/but_thread_str"
+        android:enabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/but_AsyncTask"
+        app:layout_constraintTop_toTopOf="@+id/but_AsyncTask" />
+
+    <LinearLayout
+        android:id="@+id/ll_threads"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/but_AsyncTask">
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

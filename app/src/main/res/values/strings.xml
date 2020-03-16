@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Lab2.Femenias</string>
+    <string name="activ_name">Lab2.Femenias.ServicesActiv </string>
+
+    <string name="but_local_serv_str">LocalServ </string>
+    <string name="but_bind_serv_str">BindServ </string>
+    <string name="but_screen_serv_str">ScreenServ </string>
+
+    <string name="but_get_str">Get </string>
+    <string name="but_send_str">Send </string>
+    <string name="et_time_str">500 </string>
+    <string name="et_count_str">20 </string>
+
+    <string name="but_async_task_str">Async Task </string>
+    <string name="but_thread_str">Thread </string>
+    <string name="tv_count_unknown">Unknown </string>
+
+
+    <string name="but_appwidget_str">ServActiv </string>
+    <string name="configure">Configure </string>
+    <string name="add_widget">Serv Widget </string>
+    <string name="but_send_widget_str">Serv </string>
+
+    <string name="notification_title">Screen Service running </string>
+    <string name="notification_message">Number of ScreenOn events </string>
+
+    <string name="ticker_text">Sceen Service launhing </string>
+    <string name="but_clear_str" >Clear </string>
+    <string name="but_ask_str">Ask </string>
+    <string name="tv_data_str">0 </string>
+</resources>
