@@ -38,6 +38,13 @@ public class BoundService extends Service {
                     // Update view component text, this is allowed.
                     Log.v(LOG_TAG, "I have received a message, count: "+ currentCount + " wait: " + currentWait);
                 }
+                if(msg.what == 2)
+                {
+                    Intent intent = new Intent();
+                    intent.setAction("es.udc.psi.lab2femenias.BOUND_SERVICE_ENDED");
+                    sendBroadcast(intent);
+                }
+
             }
         };
     }

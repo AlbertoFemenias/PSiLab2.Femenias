@@ -2,6 +2,7 @@ package es.udc.psi.lab2femenias;
 
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -56,21 +57,25 @@ class CounterThread extends Thread {
         Log.d("bindThread", "A new bindThread appeared");
         for (count=count; count >= 0; count--) {
             Log.d("bindThread", "countDown: " + count);
+            if (serviceHandler != null) {
+                Bundle bundle = new Bundle();
+                bundle.putInt("count", count);
+                bundle.putInt("wait", wait);
 
-            // Create a message in child thread.
-            Message childThreadMessage = new Message();
-            childThreadMessage.what = 1;
-            Bundle bundle = new Bundle();
-            bundle.putInt("count", count);
-            bundle.putInt("wait", wait);
-            childThreadMessage.setData(bundle);
+                Message update = new Message();
+                update.what = 1;
+                update.setData(bundle);
 
-            // Put the message in main thread message queue.
-            serviceHandler.sendMessage(childThreadMessage);
-
-
+                serviceHandler.sendMessage(update);
+            }
             SystemClock.sleep(wait);
         }
+        if (serviceHandler != null) {
+            Message exit = new Message();
+            exit.what = 2;
+            serviceHandler.sendMessage(exit);
+        }
+
         cancel();
     }
 

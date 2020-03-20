@@ -141,7 +141,7 @@
         app:layout_constraintTop_toTopOf="@+id/but_screen_serv" />
 
 
-    <Button
+    <ToggleButton
         android:id="@+id/but_AsyncTask"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -149,11 +149,14 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:text="@string/but_async_task_str"
-        android:enabled="false"
+        android:textOff="Async Task"
+        android:textOn="Async Task"
+        android:enabled="true"
         app:layout_constraintEnd_toStartOf="@+id/but_thread"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/but_screen_serv" />
+
 
     <Button
         android:id="@+id/but_thread"
