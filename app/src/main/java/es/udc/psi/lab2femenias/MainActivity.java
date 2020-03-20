@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity  {
     BroadcastReceiver localServiceReceiver;
     IntentFilter boundFilter;
     IntentFilter localFilter;
+    Context mainActivityContext = this;
 
 
 
@@ -102,6 +103,7 @@ public class MainActivity extends AppCompatActivity  {
                     localService = new LocalService();
                     Intent intent = new Intent(MainActivity.this, LocalService.class);
                     localService.setCounter(countInt, waitInt);
+                    localService.getContext(mainActivityContext);
                     localService.onStartCommand(intent, Service.START_FLAG_RETRY,1);
 
                 } else {

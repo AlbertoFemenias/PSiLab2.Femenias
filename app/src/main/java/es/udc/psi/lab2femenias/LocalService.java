@@ -3,6 +3,7 @@ package es.udc.psi.lab2femenias;
 import android.annotation.SuppressLint;
 import android.app.Service;
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -15,10 +16,15 @@ public class LocalService extends Service {
     int count;
     int wait;
     private Handler serviceHandler;
+    Context mainActivity;
 
     public void setCounter(int count, int wait){
         this.count = count;
         this.wait = wait;
+    }
+
+    public void getContext(Context mainActivity){
+        this.mainActivity = mainActivity;
     }
 
     @SuppressLint("HandlerLeak")
@@ -32,7 +38,7 @@ public class LocalService extends Service {
                 {
                     Intent intent = new Intent();
                     intent.setAction("es.udc.psi.lab2femenias.LOCAL_SERVICE_ENDED");
-                    //sendBroadcast(intent);
+                    mainActivity.sendBroadcast(intent);
                 }
             }
         };
